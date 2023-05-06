@@ -25,13 +25,13 @@
 
 ![Mongo](https://i.ibb.co/DrytF9K/app-overview-v8.png)
 
-6. A modal will open, select **Connect to your application**.
+6. A modal will open, select **Drivers**.
 
-![Mongo](https://i.ibb.co/59qBLJH/app-overview-v8.png)
+![Mongo](../assets/select_connection_type.PNG)
 
 7. Copy your connection string and replace it with the connection string from step 4. Don't forget to change `<password>`!
 
-![Mongo](https://i.ibb.co/7RT10Qc/app-overview-v8.png)
+![Mongo](../assets/node_connect.PNG)
 
 8. Export!
 
