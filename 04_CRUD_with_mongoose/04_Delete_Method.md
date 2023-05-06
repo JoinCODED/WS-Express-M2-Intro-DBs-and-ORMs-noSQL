@@ -11,7 +11,7 @@
    };
    ```
 
-2. If `foundTask` exists, we will pass it to a **Mongoose method** called `.remove()` that will take care of deleting the task for us, **set the status to** `204` and **end the response**.
+2. If `foundTask` exists, we will pass it to a **Mongoose method** called `.deleteOne()` that will take care of deleting the task for us, **set the status to** `204` and **end the response**.
 
    ```javascript
    try {
@@ -29,7 +29,7 @@
    try {
      const foundTask = await Task.findById(taskId);
      if (foundTask) {
-       await foundTask.remove();
+       await foundTask.deleteOne();
        res.status(204).end();
      } else {
        res.status(404).json({ message: "Task not found" });
