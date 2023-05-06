@@ -24,12 +24,12 @@
    };
    ```
 
-3. Then if `foundTask` is true we will use a **Mongoose method** called `findByIdAndUpdate()` that **will take care of updating the task for us**. and we will pass it `{new:true}` as an argument to return the updated document Don't forget to **change the status** to `204` and **end the response**.
+3. Then if `foundTask` is true we will use a **Mongoose method** called `updateOne()` that **will take care of updating the task for us**. and we will pass it `{new:true}` as an argument to return the updated document Don't forget to **change the status** to `204` and **end the response**.
 
    ```javascript
    try {
      const foundTask = await Task.findById(taskId);
-     await Task.findByIdAndUpdate({_id:taskId,req.body,{new:true}})
+     await Task.updateOne(req.body)
      res.status(204).end();
    }
    ```
@@ -40,7 +40,7 @@
    try {
      const foundTask = await Task.findById(taskId);
      if (foundTask) {
-     await Task.findByIdAndUpdate({_id:taskId,req.body,{new:true}})
+       await Task.updateOne(req.body)
        res.status(204).end();
      } else {
        res.status(404).json({ message: "Task not found" });
