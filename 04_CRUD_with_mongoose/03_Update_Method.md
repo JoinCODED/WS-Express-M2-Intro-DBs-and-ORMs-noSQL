@@ -29,7 +29,7 @@
    ```javascript
    try {
      const foundTask = await Task.findById(taskId);
-     await Task.updateOne(req.body)
+     await foundTask.updateOne(req.body)
      res.status(204).end();
    }
    ```
@@ -40,7 +40,7 @@
    try {
      const foundTask = await Task.findById(taskId);
      if (foundTask) {
-       await Task.updateOne(req.body)
+       await foundTask.updateOne(req.body)
        res.status(204).end();
      } else {
        res.status(404).json({ message: "Task not found" });
